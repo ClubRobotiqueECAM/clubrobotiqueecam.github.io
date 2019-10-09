@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
+        <div class="post-meta">Le {{ post.date | date: date_format }}, par {{ post.author }}</div>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if post.image -%}
+        <div class="img"><img src="{{ site.baseurl }}{{ post.image }}"></div>
+        {%- endif -%}
+        <div>
+          {{ post.excerpt }}
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <div class='post'>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-meta">
+          {{ post.date | date: "%b %-d, %Y" }} {{ post.author }}
+        </span>
+        <br>
+        <img src="{{ site.baseurl }}{{ post.image }}">
+        <br>
+        <span>
+          {{ post.excerpt }} <a href="{{ post.url | prepend: site.baseurl }}">Keep reading</a>
+        </span>
+      </div>
+    {% endfor %}
+  </ul>
+
+</div>
