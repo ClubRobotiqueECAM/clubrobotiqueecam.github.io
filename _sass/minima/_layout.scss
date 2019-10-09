@@ -195,22 +195,33 @@
 
   > li {
     margin-bottom: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    border-bottom: 1px solid #ffffff10;
 
-    > div.img {
-      height: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+
+    > div.preview {
+      display: block;
+      max-width: 250px;
       overflow: hidden;
-      margin-bottom: $spacing-unit;
-
-      > img {
-        width: 100%;
-        position: relative;
-        top: -50%;
-      }
+      margin: 0 15px;
+      flex-grow: 1;
     }
 
-    > div {
-      flex-grow: 3;
+    > div.content {
+      flex-grow: 1;
+      width: 200px;
     }
+  }
+
+  > li:nth-child(even) > .preview {
+    order: 2;
+  }
+  > li:nth-child(odd) > .preview {
+    order: -1;
   }
 }
 
