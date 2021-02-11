@@ -1,4 +1,4 @@
-title: Funtech-Makers
+title: Club robotique ECAM Lyon
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Le Club Robotique de l’ECAM Lyon regroupe une vingtaine d’étudiants autour de
@@ -7,7 +7,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: RobotiqueECAM
-github_username:  funtech-makers
+github_username: robotique-ecam
 
 # Build settings
 theme: minima
